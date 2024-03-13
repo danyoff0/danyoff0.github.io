@@ -3,9 +3,10 @@ body{
     background-color: black;
 }
 #verdee{
-    
+    font-size: 45px;
+    text-anchor: middle;
     padding: 20px 10px;
-    width: 10000px;
+    width: auto;
     text-align: center;
     color: white;
     background-color: yellow;
@@ -28,9 +29,14 @@ li{
 }
 #ultimo{
     
+    text-anchor: middle;
+    padding: 20px 10px;
+    width: auto;
     text-align: center;
     color:whitesmoke;
-    background-color:;   
+    background-color:brown  ;
+    height: auto;
+
   
 }
 
@@ -51,7 +57,7 @@ color: white;
     padding: 40px;
     width: 800px;
     margin: 0 auto;
-    background-color: whitesmoke;
+    background-color:grey;
 box-shadow: 0 0 20px 0 green;    
 }
 form >#centrado{
@@ -60,10 +66,12 @@ form >#centrado{
 
 #en1{
     font-family:cursive;
-    color: black;
+    color: red;
     background-color: yellow;
     width: 800px;
     text-align: center;
+    height: 30px;
+    
 }
 
 
