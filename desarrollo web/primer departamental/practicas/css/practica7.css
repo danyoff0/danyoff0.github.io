@@ -21,7 +21,7 @@ body{
 #correo1{
     color: black;
     background-color: white;
-    width: 800px;
+    width: 550px;
     cursor: pointer;
     position: relative;
 
@@ -38,7 +38,7 @@ cursor: pointer;
 }
 #correo2{
     background-color: white;
-width: 800px;
+width: 550px;
 color: black;
 cursor: pointer;
 
@@ -63,7 +63,7 @@ cursor: pointer;
     color: black;
     background-color: white;
     min-height: auto;
-    width: 800px;
+    width: 550px;
     height: 50;
     text-align: center;
     border-radius: 10px;
