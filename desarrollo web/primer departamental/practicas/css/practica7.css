@@ -63,10 +63,11 @@ cursor: pointer;
     color: black;
     background-color: white;
     min-height: auto;
-    width: 180;
+    width: 800px;
     height: 50;
     text-align: center;
     border-radius: 10px;
+    
 
 }
 #en1:hover {
