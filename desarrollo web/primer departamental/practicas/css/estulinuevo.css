@@ -12,6 +12,18 @@ body{
     background-color: yellow;
 }
 
+#ultimo {
+    
+text-anchor: middle;    
+padding: 20px 10px;
+width: auto;
+text-align: center;
+color: whitesmoke;
+background-color: brown;
+height: auto;
+
+}
+
 #parrafo1{
 color: white;
 
@@ -61,6 +73,7 @@ form >#centrado{
     height: 30px;
     
 }
+
 
 
 
