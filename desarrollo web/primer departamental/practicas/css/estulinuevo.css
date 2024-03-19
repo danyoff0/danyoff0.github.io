@@ -1,0 +1,77 @@
+body{
+    font-family:cursive;
+    background-color: black;
+}
+#verdee{
+    font-size: 45px;
+    text-anchor: middle;
+    padding: 20px 10px;
+    width: auto;
+    text-align: center;
+    color: black;
+    background-color: yellow;
+}
+
+#parrafo1{
+color: white;
+
+}
+p{
+    color: white;
+    
+    }
+    h3{
+        color: white;
+    }
+
+li{
+    color: white;
+}
+
+#correo1{
+    color: white;
+    background-color: black;
+    width: 800px;
+}
+#correo2{
+    background-color: black;
+width: 800px;
+color: white;
+
+}
+.que{
+    border-radius: 10px;
+    border: 10px solid green;
+    padding: 40px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+box-shadow: 0 0 20px 0 green;    
+}
+form >#centrado{
+    text-align: center;
+}
+
+#en1{
+    font-family:cursive;
+    color: red;
+    background-color: orange;
+    width: 800px;
+    text-align: center;
+}
+
+
+
+
+#ultimo{
+    
+    text-anchor: middle;
+    padding: 20px 10px;
+    width: auto;
+    text-align: center;
+    color:whitesmoke;
+    background-color:brown  ;
+    height: auto;
+
+  
+}

@@ -1,0 +1,43 @@
+body{
+    background-image:url(./ok1.jpg);
+}
+.que{
+ color: white;
+    opacity: 0.7;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    -khtml-opacity: 0.8;
+
+ text-align: center;
+    padding: 40px;
+    margin:150 auto;
+    height: auto;
+
+  
+}
+
+
+#correo1{
+    color: black;
+    background-color: white;
+    width: 800px;
+}
+#correo2{
+    background-color: white;
+width: 800px;
+color: black;
+
+}
+
+#en1{
+    
+    color: black;
+    background-color: white;
+    min-height: auto;
+    width: 180;
+    
+    height: 50;
+    text-align: center;
+    border-radius: 10px;
+
+}
