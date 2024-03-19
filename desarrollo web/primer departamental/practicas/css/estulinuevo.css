@@ -45,7 +45,7 @@ color: white;
     padding: 40px;
     width: 800px;
     margin: 0 auto;
-    background-color: whitesmoke;
+    background-color:grey;
 box-shadow: 0 0 20px 0 green;    
 }
 form >#centrado{
@@ -55,23 +55,12 @@ form >#centrado{
 #en1{
     font-family:cursive;
     color: red;
-    background-color: orange;
+    background-color: yellow;
     width: 800px;
     text-align: center;
-}
-
-
-
-
-#ultimo{
+    height: 30px;
     
-    text-anchor: middle;
-    padding: 20px 10px;
-    width: auto;
-    text-align: center;
-    color:whitesmoke;
-    background-color:brown ;
-    height: auto;
-
-  
 }
+
+
+
