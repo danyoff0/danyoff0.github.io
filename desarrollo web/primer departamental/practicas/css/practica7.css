@@ -17,16 +17,45 @@ body{
 }
 
 
+
 #correo1{
     color: black;
     background-color: white;
     width: 800px;
+    cursor: pointer;
+    position: relative;
+
+    
+}
+abbr{
+    background-color: black;
+    width: 800px;
+color: white;
+cursor: pointer;
+}
+#ola{
+    align-items:end;
 }
 #correo2{
     background-color: white;
 width: 800px;
 color: black;
+cursor: pointer;
 
+
+}
+#cuadrado{
+    text-align: center; 
+    padding: 20px;
+    margin: 10 auto; 
+    width: 20%; 
+    background-color: black; 
+    color: white;
+    border-radius: 15px;
+
+}
+#ola11{
+        font-size: 42;
 }
 
 #en1{
@@ -35,9 +64,11 @@ color: black;
     background-color: white;
     min-height: auto;
     width: 180;
-    
     height: 50;
     text-align: center;
     border-radius: 10px;
 
+}
+#en1:hover {
+    box-shadow: 0 0 20px 0 black;
 }
