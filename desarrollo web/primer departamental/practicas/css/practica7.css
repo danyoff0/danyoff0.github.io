@@ -72,4 +72,13 @@ cursor: pointer;
 }
 #en1:hover {
     box-shadow: 0 0 20px 0 black;
+    background-color: rgb(185, 185, 185);
+}
+
+#res{
+    color: white;
+}
+
+table{
+    color: white;
 }
