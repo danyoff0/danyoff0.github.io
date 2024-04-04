@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body, html {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(4, 15, 37);
+}
+input {
+    display: none;
+}
+
+input[value="top"]:checked ~ .container .cube {
+    transform: rotateX(-45deg) rotateY(17deg);
+}
+input[value="bottom"]:checked ~ .container .cube {
+    transform: rotateX(45deg) rotateY(17deg);
+}
+input[value="left"]:checked ~ .container .cube {
+    transform: rotateX(-17deg) rotateY(80deg);
+}
+input[value="right"]:checked ~ .container .cube {
+    transform: rotateX(-17deg) rotateY(-80deg);
+}
+
+input[value="top"]:checked ~ #topid, 
+input[value="bottom"]:checked ~ #bottomid, 
+input[value="left"]:checked ~ #leftid, 
+input[value="right"]:checked ~ #rightid {
+    border-bottom: 87px solid #0044ff;
+}
+
+
+
+
+label {
+    position: fixed;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid #00ff88;
+    cursor: pointer;
+    transition: 0.5s;
+}
+label:hover{
+    transform: scale(1.09, 1.09);
+}
+
+#leftid {
+    left: 16px;
+    rotate: -90deg;
+}
+#rightid {
+    right: 16px;
+    rotate: 90deg;
+}
+#topid {
+    top: 16px;
+}
+#bottomid {
+    bottom: 16px;
+    rotate: 180deg;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+.cube {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: transform 0.5s linear;
+}
+
+p {
+    color: #00ff88;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.wall {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    border: 1px solid #00ff88;
+    transform: rotateX(0deg) translateZ(100px);
+}
+.back {
+    border: 1px solid #00ff88;
+    transform: rotateX(180deg) translateZ(100px);
+}
+.right {
+    border: 1px solid #00ff88;
+    transform: rotateY(90deg) translateZ(100px);
+}
+.left {
+    border: 1px solid #00ff88;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.top {
+    border: 1px solid #00ff88;
+    transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+    border: 1px solid #00ff88;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+  #horas {
+    color: aliceblue;
+}
+#minutos {
+    color: aliceblue;
+}
+
+#segundos {
+    color: aliceblue;
+}
+
+
+  .relogio span {
+    font-weight: bold;
+  }
+  .relogio span.tempo {
+    font-size: 10px;
+  }
