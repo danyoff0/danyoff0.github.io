@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Tareas</title>
+<link rel="stylesheet" type="text/css" href="./css/depa.css">
+</head>
+<body>
+<div id="container">
+<form>
+    <input type="text" id="new-task" placeholder="Agregar nueva tarea" required>
+    <button type="submit">Agregar</button>
+    <select id="filter">
+        <option value="all" selected>Todas</option>
+        <option value="active">Activas</option>
+        <option value="completed">Completadas</option>
+    </select>
+</form>
+
+<ul></ul>
+</div>
+<script src="./js/depa.js"></script>
+
+</body>
+</html>
