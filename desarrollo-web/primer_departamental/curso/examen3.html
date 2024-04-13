@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="./css/examen3.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>Technical Documentation</header>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="HTML_Basics">
+            <header>HTML Basics</header>
+            <p>HTML stands for HyperText Markup Language.</p>
+            <p>It is the standard markup language used to create web pages.</p>
+            <code>&lt;html&gt;</code>
+            <code>&lt;head&gt;</code>
+            <code>&lt;body&gt;</code>
+            <ul>
+                <li>Elements</li>
+                <li>Attributes</li>
+                <li>Headings</li>
+                <li>Paragraphs</li>
+                <li>Links</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="CSS_Styling">
+            <header>CSS Styling</header>
+            <p>CSS stands for Cascading Style Sheets.</p>
+            <p>It is used to style the visual presentation of web pages.</p>
+            <code>color: blue;</code>
+            <code>font-size: 16px;</code>
+            <code>text-align: center;</code>
+            <ul>
+                <li>Selectors</li>
+                <li>Properties</li>
+                <li>Values</li>
+                <li>Box Model</li>
+                <li>Flexbox</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="JavaScript_Basics">
+            <header>JavaScript Basics</header>
+            <p>JavaScript is a programming language that adds interactivity to web pages.</p>
+            <p>It can be used to change HTML content, style CSS, and handle user interactions.</p>
+            <code>document.getElementById('example')</code>
+            <code>function myFunction() { ... }</code>
+            <ul>
+                <li>Variables</li>
+                <li>Functions</li>
+                <li>Arrays</li>
+                <li>Objects</li>
+                <li>Events</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Python_Fundamentals">
+            <header>Python Fundamentals</header>
+            <p>Python is a high-level programming language known for its simplicity and readability.</p>
+            <p>It is widely used in various applications such as web development, data analysis, and artificial intelligence.</p>
+            <code>print("Hello, World!")</code>
+            <code>for x in range(5):</code>
+            <ul>
+                <li>Variables</li>
+                <li>Loops</li>
+                <li>Functions</li>
+                <li>Modules</li>
+                <li>Classes</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Java_Overview">
+            <header>Java Overview</header>
+            <p>Java is a versatile programming language that is used for developing desktop, web, and mobile applications.</p>
+            <p>It is known for its portability, performance, and security features.</p>
+            <code>public class Main { ... }</code>
+            <code>int num = 10;</code>
+            <ul>
+                <li>Classes</li>
+                <li>Methods</li>
+                <li>Inheritance</li>
+                <li>Interfaces</li>
+                <li>Exceptions</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Dynamically set nav links text based on section headers
+        const sections = document.querySelectorAll('.main-section');
+        const navBar = document.getElementById('navbar');
+
+        sections.forEach(section => {
+            const headerText = section.querySelector('header').textContent;
+            const navLink = document.createElement('a');
+            navLink.textContent = headerText;
+            navLink.classList.add('nav-link');
+            navLink.href = `#${section.id}`;
+            navBar.appendChild(navLink);
+        });
+    </script>
+</body>
+</html>
