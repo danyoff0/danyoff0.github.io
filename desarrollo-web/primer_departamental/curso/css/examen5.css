@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-color: lightblue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects {
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.project-tile {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .project-tile {
+        width: 100%;
+    }
+}

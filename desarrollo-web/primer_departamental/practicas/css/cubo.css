@@ -129,6 +129,7 @@ p {
 
 
   #horas {
+ 
     color: aliceblue;
 }
 #minutos {
@@ -141,8 +142,11 @@ p {
 
 
   .relogio span {
+    color: antiquewhite;
+    
     font-weight: bold;
   }
   .relogio span.tempo {
+    
     font-size: 10px;
   }

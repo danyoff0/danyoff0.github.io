@@ -1,17 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   
-    <link rel="stylesheet" type="text/css" href="./css/relog.css" />
-
-<title></title>
+    <link rel="stylesheet" type="text/css" href="./css/relog.css" /> <!-- Se vincula la hoja de estilos para el reloj -->
+    <title>Reloj</title>
 </head>
 <body>
-    
-
+    <!-- Sección del reloj analógico -->
   <div class="clock">
     <div class="hour"></div>
     <div class="min"></div>
     <div class="sec"></div>
+        <!-- como rotaria el relog y cuales son los numerosde ellos-->
     <span style="transform: rotate(30deg);">1</span>
     <span style="transform: rotate(60deg);">2</span>
     <span style="transform: rotate(90deg);">3</span>
@@ -29,7 +28,7 @@
   <script src="./java/relog.js"></script>
 
   <div>
-
+    <!-- Sección del reloj digital -->
     <div class="relogio">
         <div>
           <span id="horas">00</span>
@@ -44,10 +43,8 @@
           <span class="tempo">Segundos</span>
         </div>
       </div>
+          <!-- Se carga el script JavaScript para el reloj digital, que actualizará la hora -->
       <script src="./java/relog.js"></script>
-   
-
-
   </div>
 </body>
 </html>
