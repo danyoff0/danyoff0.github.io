@@ -1,0 +1,54 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+
+.card {
+ box-shadow: 0 0 30px black;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  
+
+}
+
+.title {
+  color: black;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.5);
+  padding: 20px;
+}
+
+.button {
+  box-shadow: 0 0 15px black;
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
+
+.button1 {
+  box-shadow: 0 0 15px black;
+  background-color: aqua;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
