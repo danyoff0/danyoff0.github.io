@@ -1,54 +1,67 @@
-
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  
+  margin-top: 50px;
 }
 
-.card {
- box-shadow: 0 0 30px black;
-  border-radius: 15px;
+.Card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
   align-items: center;
-  
-
 }
 
-.title {
-  color: black;
+.titulo {
+  color: #333;
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgb(0,0,0,0.5);
-  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.button {
-  box-shadow: 0 0 15px black;
-  background-color: green;
+.boton {
+  background-color:green;
   border: none;
-  color: black;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
-.button1 {
-  box-shadow: 0 0 15px black;
-  background-color: aqua;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+/* Estilos para el input type="text" */
+input[type="number"] {
   font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #fbe603;
+  border-radius: 8px;
+  outline: none; /* Elimina el borde al enfocar */
+  transition: border-color 0.3s; /* Efecto de transición al cambiar el color del borde */
+}
+
+input[type="number"]:focus {
+  border-color: #333; /* Cambia el color del borde al enfocar */
+}
+
+/* Estilos para elementos <p> */
+p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6; /* Espacio entre líneas */
+  margin-bottom: 15px; /* Espaciado al final del párrafo */
+  text-align: justify; /* Alinea el texto justificado */
+  font-family: 'Arial', sans-serif; /* Tipografía más moderna */
+}
+label {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6; /* Espacio entre líneas */
+  margin-bottom: 15px; /* Espaciado al final del párrafo */
+  text-align: justify; /* Alinea el texto justificado */
+  font-family: 'Arial', sans-serif; /* Tipografía más moderna */
 }
