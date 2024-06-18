@@ -1,0 +1,318 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDOCNAiuPz-Ka2zx9U2oZ6Gwm_Z-2tVc58",
+  authDomain: "grupo15601-cbdf7.firebaseapp.com",
+  projectId: "grupo15601-cbdf7",
+  storageBucket: "grupo15601-cbdf7.appspot.com",
+  messagingSenderId: "502894219541",
+  appId: "1:502894219541:web:ee4e9e129e08bc7386191c"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+
+
+
+
+//firebase.js
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+ 
+const firebaseConfig = {
+  apiKey: "xxx",
+  authDomain: "xxx",
+  projectId: "XXX",
+  storageBucket: "XXX",
+  messagingSenderId: "XXX",
+  appId: "XXX"
+};
+ 
+firebase.initializeApp(firebaseConfig);
+ 
+const db = firebase.firestore();
+ 
+export { db };
+
+
+
+//StudentForm.js
+// /src/componentes/StudentForm.js
+
+import React, { useState } from 'react';
+import { db } from '../configuracionfirebase/firebase';
+ 
+import '../App.css';
+ 
+const StudentForm = () => {
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [matricula, setMatricula] = useState('');
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+ 
+    try {
+      await db.collection('EstudiantesInformatica2024').doc('Inscritos').set({
+        Nombre: name,
+        Apellidos: lastName,
+        Matricula: Number(matricula)
+      });
+      alert('Datos guardados exitosamente!');
+    } catch (error) {
+      console.error('Error al guardar los datos: ', error);
+      alert('Error al guardar los datos.');
+    }
+ 
+    // Limpiar los campos del formulario
+    setName('');
+    setLastName('');
+    setMatricula('');
+  };
+ 
+  return (
+    <div className="container">
+      <div className="card">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Nombre:</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Apellidos:</label>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Matrícula:</label>
+            <input
+              type="number"
+              value={matricula}
+              onChange={(e) => setMatricula(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+ 
+export default StudentForm;
+
+
+
+
+
+
+// /src/componentes/StudentList.js
+import React, { useEffect, useState } from 'react';
+import { db } from '../configuracionfirebase/firebase';
+import '../App.css';
+ 
+const StudentList = () => {
+  const [students, setStudents] = useState([]);
+ 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const snapshot = await db.collection('EstudiantesInformatica2024').doc('Inscritos').get();
+        if (snapshot.exists) {
+          const data = snapshot.data();
+          setStudents([data]); // Si hay varios estudiantes, ajustar según el esquema de datos
+        }
+      } catch (error) {
+        console.error('Error al obtener los datos: ', error);
+      }
+    };
+ 
+    fetchData();
+  }, []);
+ 
+  return (
+    <div className="container">
+      <div className="card">
+        <h2>Lista de Estudiantes</h2>
+        <ul>
+          {students.map((student, index) => (
+            <li key={index}>
+              <p><strong>Nombre:</strong> {student.Nombre}</p>
+              <p><strong>Apellidos:</strong> {student.Apellidos}</p>
+              <p><strong>Matrícula:</strong> {student.Matricula}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+ 
+export default StudentList;
+
+
+// /src/App.js
+import React from 'react';
+import './App.css';
+import StudentForm from './componentes/StudentForm';
+import StudentList from './componentes/StudentList';
+ 
+const App = () => {
+  return (
+    <div className="container">
+      <h1>Registro de Estudiantes</h1>
+      <StudentForm />
+      <StudentList />
+    </div>
+  );
+};
+ 
+export default App;
+
+
+
+
+
+
+
+/* /src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+ 
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+ 
+form {
+  display: flex;
+  flex-direction: column;
+}
+ 
+form div {
+  margin-bottom: 15px;
+}
+ 
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+ 
+form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+ 
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
+button:hover {
+  background-color: #0056b3;
+}
+ 
+ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+ul li {
+  margin-bottom: 15px;
+}
+ 
+ul li p {
+  margin: 5px 0;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+ //package.json
+{
+  "name": "my-app-firebase",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "firebase": "^10.12.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
