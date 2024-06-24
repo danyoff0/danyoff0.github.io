@@ -1,0 +1,93 @@
+
+export default MyApp;
+
+import React, { useState, useEffect } from 'react';
+import moment from 'moment-timezone';
+import 'moment-timezone';
+import 'moment/locale/es';
+import { db } from './configuracionfirebase/firebase';
+import 'firebase/firestore';
+
+const MyApp = () => {
+  const [events, setEvents] = useState([]);
+  const [newEventName, setNewEventName] = useState('');
+  const [newEventDate, setNewEventDate] = useState('');
+const [newEventTime, setNewEventTime] = useState('');
+  const eventsRef = db.collection('Calendario').doc('calen').collection('events');
+
+  useEffect(() => {
+    getEvents();
+  }, []);
+
+  const addDate = (dateString) => {
+    const dateTime = moment(dateTimeString);
+    return dateTime.utc().format('DD [de] MMMM [de] YYYY, HH:mm:ss [UTC-6]');
+  };
+
+  const addEvent = () => {
+    if (newEventName && newEventDate) {
+      const event = {
+        nombre: newEventName,
+        
+        fecharegistro: addDate(newEventDate),
+      };
+
+      console.log('Datos a enviar al agregar evento:', event);
+
+      eventsRef.add(event).then(() => {
+        setNewEventName('');
+        setNewEventDate('');
+        setNewEventTime('');
+        getEvents(); // Actualiza la lista de eventos después de agregar uno nuevo
+      }).catch((error) => {
+        console.error("Error al agregar evento:", error);
+      });
+    }
+  };
+
+  const getEvents = () => {
+    eventsRef.get().then((querySnapshot) => {
+      const eventsArray = [];
+      querySnapshot.forEach((doc) => {
+        eventsArray.push({ id: doc.id, ...doc.data() });
+      });
+
+      console.log('Eventos obtenidos:', eventsArray);
+
+      setEvents(eventsArray);
+    }).catch((error) => {
+      console.error("Error al obtener eventos:", error);
+    });
+  };
+
+  return (
+    <div>
+      <h1>Calendario1</h1>
+      <form onSubmit={(e) => { e.preventDefault(); addEvent(); }}>
+      <input type="text" value={newEventName} onChange={(e) => setNewEventName(e.target.value)} placeholder="Nombre del evento" />
+  <input type="date" value={newEventDate} onChange={(e) => setNewEventDate(e.target.value)} />
+  <input type="time" value={newEventTime} onChange={(e) => setNewEventTime(e.target.value)} />
+  
+        <button type="submit">Agregar evento</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Día</th>
+            <th>Nombre del evento</th>
+          </tr>
+        </thead>
+        <tbody>
+          {events.map((event) => (
+            <tr key={event.id}>
+              <td>{addDate(event.date)}</td>
+              <td>{event.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default MyApp;
